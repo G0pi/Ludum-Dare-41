@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33663664059115266}
   - component: {fileID: 23871389511078944}
   - component: {fileID: 95088983834342146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287372521611486}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0.19780304}
   m_Children: []
   m_Father: {fileID: 0}

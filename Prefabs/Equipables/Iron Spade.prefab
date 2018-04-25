@@ -53,3 +53,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipableName: Iron Spade
   equipable: {fileID: 1287372521611486, guid: 61de546a80e707f4ba95de1b7f05f3f5, type: 2}
+  uiRotation: {x: -35, y: -90, z: 0}
+  uiScale: {x: 7, y: 7, z: 0.7}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 3072
+  validPlaceTag: Soil
+  placeDistance: 3
+  ghostPrefab: {fileID: 1314537513532288, guid: b29c701816158bc45b1a49352a8db66e,
+    type: 2}
+  validPlace:
+    serializedVersion: 2
+    rgba: 1694498815
+  invalidPlace:
+    serializedVersion: 2
+    rgba: 1677721855
+  patch: {fileID: 1777300873005430, guid: e3e1109847a0fe3478eba79b1637448c, type: 2}

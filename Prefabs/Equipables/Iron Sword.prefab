@@ -53,4 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipableName: Iron Sword
   equipable: {fileID: 1317510316901756, guid: 836e2c68c99fb9e46aba1531cd2ff35f, type: 2}
+  uiRotation: {x: -130, y: -90, z: 90}
+  scale: {x: 3, y: 3, z: 3}
   damage: 2.5

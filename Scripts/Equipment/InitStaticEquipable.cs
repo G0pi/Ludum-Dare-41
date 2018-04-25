@@ -10,12 +10,15 @@ public class InitStaticEquipable : GameControllerRunnable {
 	private Animator playerAnimator;
 	[SerializeField] 
 	private Transform attackCheck;
+	[SerializeField]
+	private GameObject[] patchGrowCycle;
 
 
 	public override void Init() {
 		Equipable.equipableParent = equipableParent;
 		AnimatedEquipable.animator = playerAnimator;
 		Weapon.center = attackCheck;
+		Patch.growCycle = patchGrowCycle;
 	}
 
 }

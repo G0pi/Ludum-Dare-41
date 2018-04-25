@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 114397673592815506}
   - component: {fileID: 54338099368365302}
   - component: {fileID: 136247211912662936}
+  - component: {fileID: 114711633823560336}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -570,7 +571,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888183563896204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.47, y: 4.24, z: 1.18}
+  m_LocalPosition: {x: 6.47, y: -4.17, z: 1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4623218111668852}
@@ -710,10 +711,10 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 10
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967263
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -858,8 +859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5942c894af5548e459313b0df55188e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipables:
-  - {fileID: 114344363659482580, guid: cbde9b899db28d04680b2206e0c36ad8, type: 2}
   speed: 5
   mouseSense: 50
   yLookInterval: {x: -75, y: 75}
@@ -874,6 +873,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c37c51e6e9684a498d479efa6ccb2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114711633823560336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528576117916510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6deb348f8a4234d8d90c6e1a6da06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory:
+  - {fileID: 114365730139423220, guid: 8063a2fda1600114c9f522f1a23da179, type: 2}
+  - {fileID: 114822552006099524, guid: e573fa256fe07a84a8dc8055ccfc1123, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  invParent: {fileID: 0}
+  inventoryIndex: 0
 --- !u!124 &124353744971456070
 Behaviour:
   m_ObjectHideFlags: 1

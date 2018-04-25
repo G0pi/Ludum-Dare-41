@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	[SerializeField]
-	private Equipable[] equipables;
-	private int equipIndex;
 	private Equipable currEquip;
 	[SerializeField]
 	private float speed = 5f;
@@ -18,6 +15,7 @@ public class Player : MonoBehaviour {
 	private Transform cam;
 	private PlayerController pc;
 	private Animator anim;
+	private Inventory inv;
 
 
 	// Use this for initialization
@@ -26,9 +24,8 @@ public class Player : MonoBehaviour {
 		pc = GetComponent<PlayerController> ();
 		anim = GetComponentInChildren<Animator> ();
 		xLook = 0f;
-		equipIndex = 0;
-		if (equipables != null)
-			SwitchEquipable (equipables [equipIndex]);
+		inv = GetComponent<Inventory> ();
+		SwitchEquipable (inv.GetCurrentWeapon());
 	}
 	
 	// Update is called once per frame
@@ -46,21 +43,12 @@ public class Player : MonoBehaviour {
 		}
 
 		// Switch Weapon Handler
-		if (pc.equipableSwitch != 0) {
-			
-			if (pc.equipableSwitch < 0) {
-				Debug.Log ("Weapon Switch -");
-				equipIndex--;
-				if (equipIndex < 0)
-					equipIndex = equipables.Length - 1;
-				pc.equipableSwitch++;
-			} else {
-				Debug.Log ("Weapon Switch +");
-				equipIndex++;
-				equipIndex = equipIndex % equipables.Length;
-				pc.equipableSwitch--;
-			}
-			SwitchEquipable (equipables[equipIndex]);
+		if (pc.equipableSwitch < 0) {
+			SwitchEquipable (inv.Prev ());
+			pc.equipableSwitch++;
+		} else if(pc.equipableSwitch > 0) {
+			SwitchEquipable (inv.Next ());
+			pc.equipableSwitch--;
 		}
 
 		// Animations
@@ -69,10 +57,16 @@ public class Player : MonoBehaviour {
 		} else {
 			anim.SetBool ("Walking", false);
 		}
+
+		// Call currEquip FixedUpdate
+		if (currEquip != null) {
+			currEquip.FixedUpdate ();
+		}
 	}
 
 	void Attack() {
-		currEquip.Use ();
+		if(currEquip != null) 
+			currEquip.Use ();
 	}
 
 	void SwitchEquipable (Equipable equipable) {
@@ -80,7 +74,9 @@ public class Player : MonoBehaviour {
 			currEquip.Unequip();
 		}
 		currEquip = equipable;
-		equipable.Equip ();
+		if (equipable != null) {
+			equipable.Equip ();
+		}
 	}
 
 

@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
 	private CursorLock cursorLock;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		paused = false;
 		cursorLock = GetComponent<CursorLock> ();
 		cursorLock.Lock ();
